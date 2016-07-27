@@ -7,6 +7,24 @@
 <body>
 
     <div data-ng-controller="ContatoController">
+
+        <div class="alert alert-info" data-ng-hide="hideAlerta">
+            <strong>Info!</strong> Carregando dados
+        </div>
+
+        <table class="table">
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Documento</th>
+            </tr>
+            <tr data-ng-repeat="item in Contatos">
+                <td>{{item.recno}}</td>
+                <td>{{item.Nome}}</td>
+                <td>{{item.Documento}}</td>
+            </tr>
+        </table>
+
         <div>{{result}}</div>
     </div>
 

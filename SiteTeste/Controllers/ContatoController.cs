@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Dominio;
+using Biblioteca;
 
 namespace SiteTeste.Controllers
 {
@@ -12,9 +14,11 @@ namespace SiteTeste.Controllers
     {
 
         [HttpGet]
-        public string Teste()
+        public List<Contato> Teste()
         {
-            return "ok";
+            var db = new dbHelper("default");
+            var Contatos = db.Contatos.ToList();
+            return Contatos;
         }
 
     }
